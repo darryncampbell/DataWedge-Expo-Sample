@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.datawedgereactnative.demo">
+    package="com.datawedgeexpo.demo">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

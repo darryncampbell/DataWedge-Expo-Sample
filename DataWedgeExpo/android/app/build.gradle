@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.datawedgereactnative.demo"
+        applicationId "com.datawedgeexpo.demo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,4 +1,4 @@
-package com.datawedgereactnative.demo.generated;
+package com.datawedgeexpo.demo.generated;
 
 import java.util.Arrays;
 import java.util.List;

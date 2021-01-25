@@ -64,7 +64,7 @@ export default class App extends Component {
   {
     //  Set the new configuration
     var profileConfig = {
-        "PROFILE_NAME": "ZebraReactNativeDemo",
+        "PROFILE_NAME": "ZebraExpoDemo",
         "PROFILE_ENABLED": "true",
         "CONFIG_MODE": "UPDATE",
         "PLUGIN_CONFIG": {
@@ -97,7 +97,7 @@ export default class App extends Component {
   {
     DataWedgeIntents.registerBroadcastReceiver({
       filterActions: [
-          'com.zebra.reactnativedemo.ACTION',
+          'com.zebra.expodemo.ACTION',
           'com.symbol.datawedge.api.RESULT_ACTION'
       ],
       filterCategories: [
@@ -153,7 +153,7 @@ export default class App extends Component {
   {
     console.log("Datawedge 6.3 APIs are available");
     //  Create a profile for our application
-    this.sendCommand("com.symbol.datawedge.api.CREATE_PROFILE", "ZebraReactNativeDemo");
+    this.sendCommand("com.symbol.datawedge.api.CREATE_PROFILE", "ZebraExpoDemo");
 
     this.state.dwVersionText = "6.3.  Please configure profile manually.  See ReadMe for more details.";
     
@@ -183,7 +183,7 @@ export default class App extends Component {
 
     //  Configure the created profile (associated app and keyboard plugin)
     var profileConfig = {
-        "PROFILE_NAME": "ZebraReactNativeDemo",
+        "PROFILE_NAME": "ZebraExpoDemo",
         "PROFILE_ENABLED": "true",
         "CONFIG_MODE": "UPDATE",
         "PLUGIN_CONFIG": {
@@ -192,7 +192,7 @@ export default class App extends Component {
             "PARAM_LIST": {}
         },
         "APP_LIST": [{
-            "PACKAGE_NAME": "com.datawedgereactnative.demo",
+            "PACKAGE_NAME": "com.datawedgeexpo.demo",
             "ACTIVITY_LIST": ["*"]
         }]
     };
@@ -200,7 +200,7 @@ export default class App extends Component {
 
     //  Configure the created profile (intent plugin)
     var profileConfig2 = {
-        "PROFILE_NAME": "ZebraReactNativeDemo",
+        "PROFILE_NAME": "ZebraExpoDemo",
         "PROFILE_ENABLED": "true",
         "CONFIG_MODE": "UPDATE",
         "PLUGIN_CONFIG": {
@@ -208,7 +208,7 @@ export default class App extends Component {
             "RESET_CONFIG": "true",
             "PARAM_LIST": {
                 "intent_output_enabled": "true",
-                "intent_action": "com.zebra.reactnativedemo.ACTION",
+                "intent_action": "com.zebra.expodemo.ACTION",
                 "intent_delivery": "2"
             }
         }

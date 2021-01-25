@@ -1,25 +1,46 @@
-# DataWedge-Expo-Sample
-Sample application written with the Expo framework to show barcode scanning on Zebra mobile computers 
+*Please be aware that this application / sample is provided as-is for demonstration purposes without any guarantee of support*
+=========================================================
 
-Notes:
-- https://github.com/darryncampbell/react-native-datawedge-intents/issues/14
-- https://docs.expo.io/bare/exploring-bare-workflow/
-- expo init DataWedgeExpo
-- I selected 'bare and minimal, just the essentials to get started'
-- cd DataWedgeExpo
-- yarn add react-native-datawedge-intents
-- yarn android (to run)
+# Integrating DataWedge into your Expo application
 
-NEW PLAN
-- Add some expo functionality to the existing DataWedge React Native sample
-- Cloned existing DataWedgeReactNative sample
-- yarn add react-native-unimodules
-- yarn install replaces npm install
-- Had to add to my package.json an android script, "react-native run-android"
-- Had to add my debug.keystore to DataWedgeExpo\android\app
-- To demo Expo SDK will use https://docs.expo.io/versions/v40.0.0/sdk/device/
-- expo install expo-device
-- Device manufacturer is returning NULL... I needed to follow https://docs.expo.io/bare/installing-unimodules/
+[Expo](https://docs.expo.io/) is a set of tools and services built around React Native that helps you develop, build, deploy and quickly iterate on cross platform applications using JavaScript or TypeScript.
 
-todo:
-Create blog - main point is you need to use the bare workflow because the Intent API offered by Expo does not have enough functionality to control the DataWedge API.  ALSO, KNOWN ISSUES 
+We get occasional questions from our developer community how to write an Expo application targeting Zebra Android devices so I put together this unofficial sample.  This sample uses DataWedge which is the recommended way to capture data - If you just want to run the sample jump to the Installation / quick start section below.
+
+## Using Expo with DataWedge
+
+Anyone new to Expo will quickly come up against the "Managed workflow" vs. "Bare workflow" way of working.  Expo has good documentation on the [differences between the two](https://docs.expo.io/introduction/managed-vs-bare/) and it is important to understand the differences because **you can only interface with DataWedge using the 'Bare workflow'** 
+
+DataWedge exposes an [Intent-based API](https://techdocs.zebra.com/datawedge/latest/guide/api/) which uses Broadcast Intents to control the scanner and provides the ability to listen for scan events via Intent.  The [IntentLauncher API](https://docs.expo.io/versions/v40.0.0/sdk/intent-launcher/) provided to 'managed' expo applications is not functional enough to interface with DataWedge, therefore a [different ReactNative plugin](https://www.npmjs.com/package/react-native-datawedge-intents) is required. 
+
+- `expo init <myApp>`
+- One of the bare workflow options, e.g. `'bare and minimal, just the essentials to get started'`
+- `cd <myApp>`
+- `yarn add react-native-datawedge-intents`
+
+## Demo
+
+There already exists an unofficial [ReactNative sample](https://github.com/darryncampbell/DataWedgeReactNative) for Zebra Android devices so I thought it would be worthwhile converting that to an Expo app.  The Expo documentation has a section for [converting an existing ReactNative app to Expo](https://docs.expo.io/bare/installing-unimodules/) as well as a [walkthrough of the bare workflow](https://docs.expo.io/bare/exploring-bare-workflow/), so I followed those:
+
+1. Cloned existing https://github.com/darryncampbell/DataWedgeReactNative project, made a copy of it in this repository and changed all references from 'ReactNative' to 'Expo' 
+2. `yarn add react-native-unimodules`
+3. **Important:** Followed the instructions at https://docs.expo.io/bare/installing-unimodules/ to update my project
+4. `yarn install`
+5. I chose to add a script to my `package.json` to point `yarn android` to `react-native run-android` as the old DataWedgeReactNative project did not use yarn.
+6. I wanted to show some use of the Expo SDK so I chose [Device](https://docs.expo.io/versions/v40.0.0/sdk/device/).
+7. `expo install expo-device`
+8. Modified the existing application to use the Expo Device API to print the device manufacturer at the top of the app
+
+*View this application running by following the installation / quick start section immediately below:*
+
+## Installation / Quick Start
+Assuming you have an [Expo environment](https://docs.expo.io/get-started/installation/) configured
+* `git clone https://github.com/darryncampbell/DataWedge-Expo-Sample.git`
+* `cd DataWedge-Expo-Sample`
+* `cd DataWedgeExpo`
+* `yarn install`
+* `yarn android`
+
+**If you receive `Task :app:validateSigningDebug FAILED` then please see [this StackOverflow post](https://stackoverflow.com/questions/57104357/react-native-task-appvalidatesigningdebug-failed)**
+
+![Expo](https://raw.githubusercontent.com/darryncampbell/DataWedge-Expo-Sample/main/screenshots/002.jpg)

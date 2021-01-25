@@ -1,7 +1,7 @@
-package com.datawedgereactnative.demo;
+package com.datawedgeexpo.demo;
 
 // com.myapp should be your package name
-import com.datawedgereactnative.demo.generated.BasePackageList;
+import com.datawedgeexpo.demo.generated.BasePackageList;
  
 import android.app.Application;
 import android.util.Log;
