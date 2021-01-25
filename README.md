@@ -44,3 +44,13 @@ Assuming you have an [Expo environment](https://docs.expo.io/get-started/install
 **If you receive `Task :app:validateSigningDebug FAILED` then please see [this StackOverflow post](https://stackoverflow.com/questions/57104357/react-native-task-appvalidatesigningdebug-failed)**
 
 ![Expo](https://raw.githubusercontent.com/darryncampbell/DataWedge-Expo-Sample/main/screenshots/002.jpg)
+
+## Warnings
+
+If you receive any of the following warnings from the app:
+
+![Pre-6.3 warning message](https://raw.githubusercontent.com/darryncampbell/DataWedgeReactNative/master/screenshots/pre_6.3_message.png)
+
+![6.3 warning message](https://raw.githubusercontent.com/darryncampbell/DataWedgeReactNative/master/screenshots/6.3_message.png)
+
+Please refer to the DataWedgeReactNative project [ReadMe file](https://github.com/darryncampbell/DataWedgeReactNative/blob/master/README.md).
