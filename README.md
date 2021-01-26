@@ -47,10 +47,21 @@ Assuming you have an [Expo environment](https://docs.expo.io/get-started/install
 
 ## Warnings
 
-If you receive any of the following warnings from the app:
+You will see this message if you are running a version of Datawedge prior to 6.3:
 
 ![Pre-6.3 warning message](https://raw.githubusercontent.com/darryncampbell/DataWedgeReactNative/master/screenshots/pre_6.3_message.png)
 
+And this message if you are running Datawedge 6.3:
+
 ![6.3 warning message](https://raw.githubusercontent.com/darryncampbell/DataWedgeReactNative/master/screenshots/6.3_message.png)
 
-Please refer to the DataWedgeReactNative project [ReadMe file](https://github.com/darryncampbell/DataWedgeReactNative/blob/master/README.md).
+In either case, ensure you have a Datawedge profile on the device.  You can do this by:
+
+- Launching the Datawedge application
+- (Prior to 6.3 only) Select Menu --> New Profile and name the profile `ZebraExpoDemo`
+  - Associate the profile with com.datawedgeexpo.demo and with * Activities (Note: You need to have previously run the application on the device to complete this step)
+  - Configure the intent output plugin to send broadcast intents to `com.zebra.expodemo.ACTION`
+
+![DataWedge configuration](https://raw.githubusercontent.com/darryncampbell/DataWedge-Expo-Sample/main/screenshots/dw_1.jpg)
+
+![DataWedge configuration](https://raw.githubusercontent.com/darryncampbell/DataWedge-Expo-Sample/main/screenshots/dw_2.jpg)
